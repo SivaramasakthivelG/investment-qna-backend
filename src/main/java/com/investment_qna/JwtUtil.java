@@ -1,6 +1,7 @@
 package com.investment_qna;
 
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.Date;
 
 import javax.crypto.SecretKey;
@@ -18,7 +19,7 @@ import io.jsonwebtoken.security.Keys;
 public class JwtUtil {
 
     private static final String SECRET_KEY = "your-very-strong-secret-key-change-this"; 
-    private static final long EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 10; // 10 days; 
+    private static final long EXPIRATION_TIME = Duration.ofDays(60).toMillis(); // 60 days
 
     private final SecretKey key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
 
