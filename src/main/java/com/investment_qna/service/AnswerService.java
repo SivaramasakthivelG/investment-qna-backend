@@ -40,7 +40,11 @@ public class AnswerService {
             BulkAnswerRequestDTO request,
             User user
     ) {
-
+        
+        answerRepository.deleteByUserIdAndStockSymbol(
+            user.getId(),
+            request.getStockSymbol()
+        );
         List<Answer> answersToSave = new ArrayList<>();
 
         for (AnswerDTO dto : request.getAnswers()) {
