@@ -110,21 +110,5 @@ public class AnswerController {
         answerService.saveBulkAnswers(request, user);
     }
 
-    @GetMapping("/resume")
-    public ResumeResponseDTO resumeAnswers(
-            @RequestParam String stockSymbol,
-            @RequestParam Long categoryId,
-            Principal principal
-    ) {
-        User user = userRepository.findByEmail(principal.getName())
-            .orElseThrow(() -> new RuntimeException("User not found"));
-
-        return answerService.getResumeAnswers(
-            user.getId(),
-            stockSymbol,
-            categoryId
-        );
-    }
-
 
 }

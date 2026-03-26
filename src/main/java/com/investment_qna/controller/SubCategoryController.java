@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/subcategories")
 @Tag(name = "Subcategories", description = "APIs for managing subcategories under categories")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:5173")
 public class SubCategoryController {
 
     @Autowired
