@@ -18,8 +18,7 @@ import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 public class GoogleAuthService {
 
     private static final String CLIENT_ID =
-        "69093629046-ceodbhe966eshu26kl2eu7snpb4386qh.apps.googleusercontent.com";
-
+                "165233056285-h9bhd9f67c11ghspl57s0d2bogqcdocb.apps.googleusercontent.com";
     public JWTClaimsSet verifyToken(String token) throws Exception {
 
         JWKSource<SecurityContext> keySource =
@@ -39,6 +38,13 @@ public class GoogleAuthService {
         if (!claims.getAudience().contains(CLIENT_ID)) {
             throw new RuntimeException("Invalid Google token audience");
         }
+        String email = claims.getStringClaim("email");
+        String googleId = claims.getSubject();   // this is "sub"
+        String name = claims.getStringClaim("name");
+
+        System.out.println("Email: " + email);
+        System.out.println("Google ID: " + googleId);
+        System.out.println("Name: " + name);
 
         return claims;
     }
