@@ -4,6 +4,23 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Env & secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+credentials.json
+client_secret*.json
+application-local.properties
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+
 ### STS ###
 .apt_generated
 .classpath
