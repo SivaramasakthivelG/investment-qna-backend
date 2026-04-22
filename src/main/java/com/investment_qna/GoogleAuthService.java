@@ -43,7 +43,6 @@ public class GoogleAuthService {
         String name = claims.getStringClaim("name");
 
         System.out.println("Email: " + email);
-        System.out.println("Google ID: " + googleId);
         System.out.println("Name: " + name);
 
         return claims;
