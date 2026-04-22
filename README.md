@@ -111,6 +111,10 @@ export SPRING_PROFILES_ACTIVE=local
 
 ---
 
+### visit out deployed application
+
+https://investment-qna-frontend.vercel.app/dashboard
+
 ## 🧠 Core Idea
 
 > Turn scattered thinking into a structured investment report — with minimal effort.
